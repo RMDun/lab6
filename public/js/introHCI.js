@@ -9,9 +9,12 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
+
 	$('.project a').click(addProjectDetails);
 
 	$('#colorBtn').click(randomizeColors);
+
+	$('.project a').get('/', callBack);
 }
 
 /*
@@ -27,4 +30,17 @@ function addProjectDetails(e) {
 	var idNumber = projectID.substr('project'.length);
 
 	console.log("User clicked on project " + idNumber);
+
+	var url = "/project/" + idNumber;
+	console.log(url);
+
+	$('.project a').get(url, callBack);
+}	
+
+function callBack(result) {
+	console.log(result);
+
+}
+function randomizeColors(){
+
 }
