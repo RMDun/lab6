@@ -19,7 +19,7 @@ function statusChangeCallback(response) {
 }
 
 function changeUser(response) {
-  $("p").hide();
+  $("p.facebookLogin").hide();
   $("h1#name").text(response.name);
-  $("img#photo").attr("src", "http://localhost:8000");
+  $("img#photo").attr("src", response.picture.data.url);
 }
