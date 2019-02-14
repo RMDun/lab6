@@ -44,5 +44,5 @@ function callBack(result) {
     '<p><small>' + result['summary'] +
     '</small></p>'; 
 
-    $(".details").html(projectHTML);
+    $("#project" + result['id'] +" .details").html(projectHTML);
 }
